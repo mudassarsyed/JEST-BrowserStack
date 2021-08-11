@@ -49,7 +49,7 @@ async function driverfactory(x) {
         'build': 'JEST+SELENIUM' // CI/CD job or build name
     }
     let driver = new webdriver.Builder()
-        .usingServer('http://mudassardemo:Mz55zvYU9iCdyV9dvsKv@hub-cloud.browserstack.com/wd/hub')
+        .usingServer('http://username:accesskey@hub-cloud.browserstack.com/wd/hub')
         .withCapabilities(capabilities)
         .build();
     return driver;
