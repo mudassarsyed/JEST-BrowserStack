@@ -14,12 +14,12 @@ async function add(x, y) {
 
         //Pass 1st Parameter in Calculator and Click it
         let num1 =  await driver.findElement(By.xpath("//*[text()="+String(x)+"]"))
-        await num1.click();
+        //await num1.click();
         
-        /*
+        
         const actions = await driver.actions();
         await actions.click(num1);
-        */
+        //*/
 
         //Find add Button and Click on it
         let addition =  await driver.findElement(By.xpath('//*[@id="rso"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[4]/div/div'));

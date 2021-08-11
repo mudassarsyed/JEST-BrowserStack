@@ -14,7 +14,11 @@ async function SingleTestAddition(x, y) {
 
     //Pass 1st Parameter in Calculator and Click it
     let num1 =  await driver.findElement(By.xpath("//*[text()="+String(x)+"]"))
-    await num1.click();
+
+    //await num1.click();
+
+    const actions = await driver.actions();
+    await actions.click(num1).perform();
 
     //Find add Button and Click on it
     let addition =  await driver.findElement(By.xpath('//*[@id="rso"]/div[1]/div/div/div[1]/div/div/div[3]/div/table[2]/tbody/tr[5]/td[4]/div/div'));
@@ -45,7 +49,7 @@ async function driverfactory(x) {
         'build': 'JEST+SELENIUM' // CI/CD job or build name
     }
     let driver = new webdriver.Builder()
-        .usingServer('http://BROWSERSTACK_USERNAME:BROWSERSTACK_ACCESSKEY@hub-cloud.browserstack.com/wd/hub')
+        .usingServer('http://mudassardemo:Mz55zvYU9iCdyV9dvsKv@hub-cloud.browserstack.com/wd/hub')
         .withCapabilities(capabilities)
         .build();
     return driver;
